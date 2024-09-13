@@ -166,7 +166,7 @@ GROUP BY YEAR(InvoiceDate), MONTH(InvoiceDate)
 ORDER BY Year, Month;
     
 -- for quarterly sales pattern
-SELECT YEAR(InvoiceDate) AS Year, QUARTER(InvoiceDate) AS Quarter, SUM(Quantity * UnitPrice) AS TotalSales
+SELECT YEAR(InvoiceDate) AS Year, QUARTER(InvoiceDate) AS Quarter, SUM(Quantity * UnitPrice)/4 AS TotalSales
 FROM online_retail
 GROUP BY YEAR(InvoiceDate), QUARTER(InvoiceDate)
 ORDER BY Year, Quarter;
